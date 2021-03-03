@@ -30,7 +30,7 @@ public class time{
 			//return totalH;
 		}
 
-		//Impletment me 
+		//Implement me 
 		public int setTotalS(int sIn, int sOut) {
 			return -1;
 		}
