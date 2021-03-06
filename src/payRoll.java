@@ -9,8 +9,8 @@ public class payRoll{
 		return s;
 	}
 	
-	
-	//	//Be sure to pass in Seconds
+	     
+
 	public static void weeklyPay(ArrayList<Integer> h,ArrayList<Integer> m, ArrayList<Integer> s ,Double wage) {
 		int weeklyH = 0;
 		int weeklyM = 0;
@@ -31,10 +31,10 @@ public class payRoll{
 		}
 	
 		
-//		while(weeklyS >= 59) {
-//			weeklyS -= 60;
-//			carryOverM++;
-//		}
+		while(weeklyS >= 59) {
+			weeklyS -= 60;
+			carryoverM++;
+		}
 		
 		while(weeklyM > 59) {
 			weeklyM -= 60;
