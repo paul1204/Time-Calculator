@@ -1,4 +1,4 @@
-//time class takes two inputs of time and becomes a difference between the 2
+//time object takes two inputs of time and becomes a difference between the 2
 
 public class time{
 	
@@ -6,12 +6,18 @@ public class time{
 		private int totalM = 0;
 		private int totalS = 0;
 		
-		
-
-		//Same Logic as setTotalM
-		//We simply subract the 2 times, however if the Second carries over to the next minute
-		//We take the In second, take the distance till the next whole minute, and add it to the totalMinute plus
-		//total second worked
+		/*
+		 *Same Logic as setTotalM
+		 *We simply subract the 2 times, however if the Second carries over to the next minute
+		 *We take the In second, take the distance till the next whole minute, and add it to the totalMinute plus
+         *total second worked
+		 *  
+		 * @param sIn - Seconds In
+		 * @param sOut - Seconds Out
+		 *
+		 * @returns void
+		 *
+		 */
 		public void setTotalS(int sIn, int sOut) {
 			int wholeSec;
 			int min = 60;
@@ -32,8 +38,16 @@ public class time{
 			
 		}
 		
-		//Take mIn, Subtract from a Whole Hour to find difference
-		//Take difference and add to mOut
+		/*
+ 		 *See Documentation for setTotalS for Description for this.method
+     	 *
+		 *  
+		 * @param mIn - Minute In
+		 * @param sOut - Minute Out
+		 *
+		 * @returns void
+		 *
+		 */
 		public void setTotalM(int mIn, int mOut) {
 			int wholeHour;
 			int hour = 60;
@@ -47,15 +61,30 @@ public class time{
 			}
 		}
 
+		
+		/*
+ 	     *Computes total hours by subtracting the two @param
+ 		 * Since we are working with 24 Hours, if someone worked the grave yard shift
+ 		 * 
+ 		 * If someone clocks in at hour 23:00 and leaves at 4:00,
+ 		 * If you simply subtract the 2 hours, you'll get 19 hours which is incorrect
+ 		 * In line 89, we add 24 to 4:00 to get 28:00
+ 		 * 28:00 - 23:00 is 5 hours which is correct
+ 		 *
+		 *  
+		 * @param mIn - Minute In
+		 * @param sOut - Minute Out
+		 *
+		 * @returns void
+		 *
+		 */
 		public void setTotalH(int hIn, int hOut) {
 			//If Employee worked into the next day
 			if(hIn > hOut) {
 				hOut += 24;
 			}
 			//Finds difference of hours worked
-			totalH = Math.abs(hIn - hOut);
-			//return totalHoursWorked;
-			//return totalH;
+			totalH = Math.abs(hOut - hIn);
 		}
 
 		
