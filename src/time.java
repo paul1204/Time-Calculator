@@ -28,7 +28,7 @@ public class time{
 			
 			else if(sOut < sIn) {
 				wholeSec = min - sIn;
-				//totalM--;
+				totalM--;
 				totalS = wholeSec + sOut;
 			}
 			
@@ -79,10 +79,16 @@ public class time{
 		 *
 		 */
 		public void setTotalH(int hIn, int hOut) {
-			//If Employee worked into the next day
+			//AM -> PM 
+			if((hIn <= 12) && (hIn > hOut)) {
+				hOut += 12;
+			}
+			
+			//PM -> AM
 			if(hIn > hOut) {
 				hOut += 24;
 			}
+			
 			//Finds difference of hours worked
 			totalH = Math.abs(hOut - hIn);
 		}
