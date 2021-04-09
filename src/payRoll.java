@@ -80,8 +80,8 @@ public class payRoll{
 		System.out.println("Hello and Welcome,");
 		System.out.println("Please Enter the Following Information Followed By a Space:");
 		System.out.println("Hourly Wage");
-		System.out.println("Hours In, Minute In, Seconds In ");
-		System.out.println("Hours Out, Minute Out, Seconds Out ");
+		System.out.println("Hours In, Minute In");
+		System.out.println("Hours Out, Minute Out");
 		
 		int day = 0;
 		
@@ -109,19 +109,19 @@ public class payRoll{
 			//	System.out.println("Enter Min In");
 			int minIn = in.nextInt();
 			//System.out.println("Enter Sec In");
-			int secIn = in.nextInt();
+			//int secIn = in.nextInt();
 			//	System.out.println("Enter Hour Out");
 			int hourOut = in.nextInt();
 			//	System.out.println("Enter Min Out");
 			int minOut = in.nextInt();
 			//System.out.println("Enter Sec Out");
-			int secOut = in.nextInt();
+			//int secOut = in.nextInt();
 					
 			time workDay = new time();
 			
 			workDay.setTotalH(hourIn, hourOut);
 			workDay.setTotalM(minIn, minOut);
-			workDay.setTotalS(secIn, secOut);
+			//workDay.setTotalS(secIn, secOut);
 			s.add(day, workDay.getTotalS());
 			m.add(day, workDay.getTotalM());
 			h.add(day, workDay.getTotalH());
